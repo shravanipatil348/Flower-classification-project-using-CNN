@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 
 # Load trained model
-model = tf.keras.models.load_model("flower_model.h5")
+model = tf.keras.models.load_model("flower_model.keras")
 
 # Class names (change these if your dataset has different folders)
 class_names = ["daisy", "rose", "sunflower"]
