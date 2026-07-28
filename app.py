@@ -1,6 +1,6 @@
 import streamlit as st
 import tensorflow as tf
-from tensorflow.keras.preprocessing import image
+from tensorflow.keras.utils import img_to_array
 import numpy as np
 from PIL import Image
 
