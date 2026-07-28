@@ -21,25 +21,14 @@ if uploaded_file is not None:
 
     img = Image.open(uploaded_file)
 
-    st.image(
-        img,
-        caption="Uploaded Image",
-        width=300
-    )
+    st.image(img, caption="Uploaded Image", width=300)
 
-    # Resize according to training size
-    img = img.resize((64, 64))
+    img = img.resize((64, 64))   
 
-    # Convert image to array
     img_array = image.img_to_array(img)
-
-    # Normalize
+    img_array = np.expand_dims(img_array, axis=0)
     img_array = img_array / 255.0
 
-    # Add batch dimension
-    img_array = np.expand_dims(img_array, axis=0)
-
-    # Prediction
     prediction = model.predict(img_array)
 
     predicted_class = np.argmax(prediction)
